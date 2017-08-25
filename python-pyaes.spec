@@ -5,14 +5,14 @@
 %bcond_without	python3 # CPython 3.x module
 
 %define 	module	pyaes
-Summary:	Pure-Python implementation of AES block-cipher and common modes of operation.
+Summary:	Pure-Python implementation of AES block-cipher and common modes of operation
 # Summary(pl.UTF-8):	-
 Name:		python-%{module}
 Version:	1.6.0
-Release:	0.1
+Release:	1
 License:	MIT
 Group:		Libraries/Python
-Source0:	https://pypi.python.org/packages/63/31/6768a72cdca5dbd299ae798b690801e6c9c2f018332eec3c5fca79370dba/pyaes-1.6.0.tar.gz#md5=516d3869e62e661031635270348193fe
+Source0:	https://pypi.python.org/packages/63/31/6768a72cdca5dbd299ae798b690801e6c9c2f018332eec3c5fca79370dba/pyaes-%{version}.tar.gz
 # Source0-md5:	516d3869e62e661031635270348193fe
 URL:		-
 BuildRequires:	rpm-pythonprov
@@ -26,14 +26,15 @@ BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools
 %endif
 # when using /usr/bin/env or other in-place substitutions
-#BuildRequires:        sed >= 4.0
+#BuildRequires:	sed >= 4.0
 # replace with other requires if defined in setup.py
 Requires:	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Pure-Python implementation of AES block-cipher and common modes of operation.
+Pure-Python implementation of AES block-cipher and common modes of
+operation.
 
 # %description -l pl.UTF-8
 
@@ -60,9 +61,6 @@ Dokumentacja API %{module}.
 
 %prep
 %setup -q -n %{module}-%{version}
-
-# fix #!/usr/bin/env python -> #!/usr/bin/python:
-#%{__sed} -i -e '1s,^#!.*python,#!%{__python},' %{name}.py
 
 %build
 %if %{with python2}
