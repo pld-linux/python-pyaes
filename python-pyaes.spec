@@ -9,7 +9,7 @@ Summary:	Pure-Python implementation of AES block-cipher and common modes of oper
 # Summary(pl.UTF-8):	-
 Name:		python-%{module}
 Version:	1.6.0
-Release:	4
+Release:	5
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.python.org/packages/63/31/6768a72cdca5dbd299ae798b690801e6c9c2f018332eec3c5fca79370dba/pyaes-%{version}.tar.gz
